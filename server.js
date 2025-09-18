@@ -1,11 +1,19 @@
+
 import express from "express";
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+// 🔹 Configurar carpeta de archivos estáticos
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(".")); // Sirve los archivos HTML
 
 // 🔹 Conexión a MySQL (Railway te da los datos en variables de entorno)
