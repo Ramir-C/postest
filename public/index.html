@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba de Diagnóstico 2</title>
+    <title>Prueba de Diagnóstico</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -145,7 +145,7 @@
             const userData = {
                 username: formData.get('username'),
                 age: formData.get('age'),
-                user_group: formData.get('group'),
+                group: formData.get('group'),
                 school: formData.get('school'),
                 answers: {},
                 correctCount: 0,
@@ -182,7 +182,7 @@
             userData.incorrectAnswers = userData.incorrectAnswers.join(',');
 
             // Envía las respuestas al servidor
-            fetch('/respuestas2', {
+            fetch('/save', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
