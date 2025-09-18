@@ -19,7 +19,7 @@ const db = await mysql.createPool({
 
 // 🔹 Crear tabla si no existe
 await db.query(`
-  CREATE TABLE IF NOT EXISTS respuestas1 (
+  CREATE TABLE IF NOT EXISTS respuestas2 (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100),
     age INT,
@@ -39,7 +39,7 @@ app.post("/save", async (req, res) => {
     const { username, age, group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers } = req.body;
 
     await db.query(
-      `INSERT INTO respuestas1 (username, age, user_group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers)
+      `INSERT INTO respuestas2 (username, age, user_group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
       [username, age, group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers]
     );
@@ -58,7 +58,7 @@ app.post("/save", async (req, res) => {
 });
 
 // 🔹 Consultar resultados
-app.get("/respuestas1", async (req, res) => {
+app.get("/respuestas2", async (req, res) => {
   try {
     const [rows] = await db.query("SELECT * FROM respuestas ORDER BY created_at DESC");
     res.json(rows);
