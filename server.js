@@ -44,7 +44,7 @@ async function main() {
     console.log("✅ Tabla lista");
 
     // 🔹 Rutas HTML
-    app.get("/save", (req, res) => {
+    app.get("respuestas2", (req, res) => {
       res.sendFile(path.join(__dirname, "public", "index.html"));
     });
 
