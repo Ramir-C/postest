@@ -48,12 +48,12 @@ async function main() {
       res.sendFile(path.join(__dirname, "public", "index.html"));
     });
 
-    app.get("/resultados2", (req, res) => {
+    app.get("/respuestas2", (req, res) => {
       res.sendFile(path.join(__dirname, "public", "resultados.html"));
     });
 
     // 🔹 Guardar respuestas
-    app.post("/save", async (req, res) => {
+    app.post("/respuestas2", async (req, res) => {
       try {
         const { username, age, group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers } = req.body;
         await db.query(
