@@ -36,12 +36,12 @@ await db.query(`
 // 🔹 Guardar respuestas
 app.post("/save", async (req, res) => {
   try {
-    const { username, age, group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers } = req.body;
+    const { username, age, user_group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers } = req.body;
 
     await db.query(
       `INSERT INTO respuestas2 (username, age, user_group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-      [username, age, group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers]
+      [username, age, user_group, school, correctCount, incorrectCount, correctAnswers, incorrectAnswers]
     );
 
     res.json({
