@@ -60,7 +60,7 @@ app.post("/save", async (req, res) => {
 // 🔹 Consultar resultados
 app.get("/respuestas2", async (req, res) => {
   try {
-    const [rows] = await db.query("SELECT * FROM respuestas ORDER BY created_at DESC");
+    const [rows] = await db.query("SELECT * FROM respuestas2 ORDER BY created_at DESC");
     res.json(rows);
   } catch (error) {
     console.error("❌ Error al obtener resultados:", error);
