@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Diagnóstico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        .answer {
+            display: block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        #submitButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #resultMessage {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Prueba de Diagnóstico 1</h1>
+        <form id="diagnosticForm">
+            <label>Nombre de usuario: <input type="text" id="username" name="username" required></label><br>
+            <label>Edad: <input type="number" id="age" name="age" required></label><br>
+            <label>Grupo: <input type="text" id="group" name="group" required></label><br>
+            <label>Escuela: <input type="text" id="school" name="school" required></label><br><br>
+
+            <div class="question" data-question="1">
+                <p>1. ¿Cuál de las siguientes opciones describe mejor un cubo?</p>
+                <label class="answer"><input type="radio" name="q1" value="a"> a) Tiene seis caras y todas son rectangulares.</label>
+                <label class="answer"><input type="radio" name="q1" value="b"> b) Tiene seis caras y todas son cuadradas.</label>
+                <label class="answer"><input type="radio" name="q1" value="c"> c) Tiene ocho caras y todas son cuadradas.</label>
+            </div>
+            
+            <div class="question" data-question="2">
+                <p>2. ¿Qué figura geométrica tiene forma de cono?</p>
+                <label class="answer"><input type="radio" name="q2" value="a"> a) Un barquillo de helado.</label>
+                <label class="answer"><input type="radio" name="q2" value="b"> b) Un dado.</label>
+                <label class="answer"><input type="radio" name="q2" value="c"> c) Una pelota de fútbol.</label>
+            </div>
+            
+            <div class="question" data-question="3">
+                <p>3. ¿Cuál de las siguientes opciones describe mejor una pirámide?</p>
+                <label class="answer"><input type="radio" name="q3" value="a"> a) Tiene una base redonda y un solo vértice.</label>
+                <label class="answer"><input type="radio" name="q3" value="b"> b) Tiene una base triangular y es plana.</label>
+                <label class="answer"><input type="radio" name="q3" value="c"> c) Tiene una base cuadrada y cuatro caras.</label>
+            </div>
+            
+            <div class="question" data-question="4">
+                <p>4. ¿Cuál de las siguientes figuras tiene más lados?</p>
+                <label class="answer"><input type="radio" name="q4" value="a"> a) Un triángulo.</label>
+                <label class="answer"><input type="radio" name="q4" value="b"> b) Un cuadrado.</label>
+                <label class="answer"><input type="radio" name="q4" value="c"> c) Un pentágono.</label>
+            </div>
+            
+            <div class="question" data-question="5">
+                <p>5. ¿Qué figura geométrica es similar a una lata refresco?</p>
+                <label class="answer"><input type="radio" name="q5" value="a"> a) Esfera.</label>
+                <label class="answer"><input type="radio" name="q5" value="b"> b) Cilindro.</label>
+                <label class="answer"><input type="radio" name="q5" value="c"> c) Prisma rectangular.</label>
+            </div>
+            
+            <div class="question" data-question="6">
+                <p>6. ¿Cuál de las siguientes opciones describe mejor un prisma?</p>
+                <label class="answer"><input type="radio" name="q6" value="a"> a) Tiene dos bases circulares y una superficie curva.</label>
+                <label class="answer"><input type="radio" name="q6" value="b"> b) Tiene dos bases paralelas y caras laterales planas.</label>
+                <label class="answer"><input type="radio" name="q6" value="c"> c) Tiene una base triangular y una altura fija.</label>
+            </div>
+            
+            <div class="question" data-question="7">
+                <p>7. ¿Qué figura geométrica es similar a un balón de fútbol?</p>
+                <label class="answer"><input type="radio" name="q7" value="a"> a) Esfera.</label>
+                <label class="answer"><input type="radio" name="q7" value="b"> b) Cubo.</label>
+                <label class="answer"><input type="radio" name="q7" value="c"> c) Cilindro.</label>
+            </div>
+            
+            <div class="question" data-question="8">
+                <p>8. ¿Cuál de las siguientes opciones describe mejor una esfera?</p>
+                <label class="answer"><input type="radio" name="q8" value="a"> a) Tiene una cara y una arista.</label>
+                <label class="answer"><input type="radio" name="q8" value="b"> b) Tiene una base circular y una altura.</label>
+                <label class="answer"><input type="radio" name="q8" value="c"> c) Tiene todas sus partes a la misma distancia del centro.</label>
+            </div>
+            
+            <div class="question" data-question="9">
+                <p>9. ¿En cuantos ejes se puede mover una figura 3D?</p>
+                <label class="answer"><input type="radio" name="q9" value="a"> a) 1</label>
+                <label class="answer"><input type="radio" name="q9" value="b"> b) 3</label>
+                <label class="answer"><input type="radio" name="q9" value="c"> c) 2</label>
+            </div>
+            
+            <div class="question" data-question="10">
+                <p>10. ¿Cuáles son los números impares?</p>
+                <label class="answer"><input type="radio" name="q10" value="a"> a) Son todos aquellos que no llevan un 2.</label>
+                <label class="answer"><input type="radio" name="q10" value="b"> b) Son todos aquellos menores de 100 y que al dividirlos siempre da un número entero.</label>
+                <label class="answer"><input type="radio" name="q10" value="c"> c) Son aquellos números enteros que no son divisibles exactamente por 2.</label>
+            </div>
+            
+            <button type="button" id="submitButton" onclick="submitForm()">Enviar Respuestas</button>
+        </form>
+        <div id="resultMessage"></div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'a',
+            q3: 'c',
+            q4: 'c',
+            q5: 'b',
+            q6: 'b',
+            q7: 'a',
+            q8: 'c',
+            q9: 'b',
+            q10: 'c'
+        };
+
+        function submitForm() {
+            const form = document.getElementById('diagnosticForm');
+            const formData = new FormData(form);
+            const userData = {
+                username: formData.get('username'),
+                age: formData.get('age'),
+                group: formData.get('group'),
+                school: formData.get('school'),
+                answers: {},
+                correctCount: 0,
+                incorrectCount: 0,
+                correctAnswers: [],
+                incorrectAnswers: []
+            };
+
+            // Validar las respuestas y contar correctas/incorrectas
+            let isValid = true;
+            for (let i = 1; i <= 10; i++) {
+                const answer = formData.get('q' + i);
+                if (!answer) {
+                    isValid = false;
+                    break;
+                }
+                userData.answers['q' + i] = answer;
+                if (answer === correctAnswers['q' + i]) {
+                    userData.correctCount++;
+                    userData.correctAnswers.push(`q${i}${answer}`);
+                } else {
+                    userData.incorrectCount++;
+                    userData.incorrectAnswers.push(`q${i}${answer}`);
+                }
+            }
+
+            if (!isValid) {
+                alert('Por favor responde todas las preguntas.');
+                return;
+            }
+
+            // Formatear las respuestas correctas e incorrectas para el almacenamiento
+            userData.correctAnswers = userData.correctAnswers.join(',');
+            userData.incorrectAnswers = userData.incorrectAnswers.join(',');
+
+            // Envía las respuestas al servidor
+            fetch('/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al enviar respuestas.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayResult(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function displayResult(data) {
+            const resultMessage = document.getElementById('resultMessage');
+            resultMessage.innerHTML = `<p>Gracias por responder. Ahora puedes pasar a las actividades dentro de la aplicación.</p>
+                                        <p>Total de respuestas correctas: ${data.correctCount}</p>
+                                        <p>Total de respuestas incorrectas: ${data.incorrectCount}</p>
+                                        <p>Respuestas correctas: ${data.correctAnswers}</p>
+                                        <p>Respuestas incorrectas: ${data.incorrectAnswers}</p>`;
+        }
+    </script>
+</body>
+</html> 
